@@ -1,0 +1,9 @@
+{
+  "individual": "Alice",
+  "allCommonAxiomsSet": [
+    "ObjectPropertyAssertion(<http://www.semanticweb.org/CEX-Paper#Supervises> Alice Carol)",
+    "ObjectPropertyAssertion(<http://www.semanticweb.org/CEX-Paper#Publishes> Alice ML)",
+    "ClassAssertion(<http://www.semanticweb.org/CEX-Paper#AI> ML)",
+    "ClassAssertion(<http://www.semanticweb.org/CEX-Paper#Qualified> Alice)"
+  ]
+}
