@@ -1,0 +1,438 @@
+Block 1  
+ReslicedHeaderFile_Skolem is accepted because it already carries its own index value, ReslicedHeaderFile_Skolem_IDX. That little numeric tag shows exactly where the header sits in a larger series, so the system recognises it as the right kind of header-with-index.  
+
+AveragedAtlasHeader_Skolem is rejected because no index value is linked to it. Without that pointer, the system cannot tell which position it belongs to, so it stays outside the group.  
+
+If AveragedAtlasHeader_Skolem were given a clear index value of its own and linked to it in the same way, it would be treated just like ReslicedHeaderFile_Skolem.  
+
+
+Block 2  
+AnatomyHeaderFile_Skolem_IDX fits the category because it is explicitly marked as an integer number. Being tagged “Int” tells the system it is a simple count or position.  
+
+DimensionVal_Skolem_Dim is left out because it is not marked as an integer at all, so the system does not see it as a numeric index.  
+
+Mark DimensionVal_Skolem_Dim as an integer value, and it would be welcomed into the same group.  
+
+
+Block 3  
+WarpParams_Skolem_IDX qualifies since it is labelled as an integer. That numeric status lets it serve as a clean index for warp-parameter information.  
+
+DimensionVal_Skolem_Dim lacks this numeric label, so the system does not treat it as an index.  
+
+Give DimensionVal_Skolem_Dim the “Int” label and it would be treated just like WarpParams_Skolem_IDX.  
+
+
+Block 4  
+AtlasY_Skolem_Dim is accepted because it is identified as a text string, signalling that it stores descriptive text rather than numbers.  
+
+AnatomyHeaderFile_Skolem_IDX is not recognised here because it is not tagged as a string.  
+
+Label AnatomyHeaderFile_Skolem_IDX as a string, and it would meet the same requirement.  
+
+
+Block 5  
+namePrefix falls into the set because it is classified as a string. That tells the system it is plain text suitable for naming things.  
+
+ReslicedImageFile_Skolem_IDX does not belong because it is not marked as text; instead, it is an integer value.  
+
+If ReslicedImageFile_Skolem_IDX were tagged as a string instead of an integer, it would be treated like namePrefix.  
+
+
+Block 6  
+DimensionVal_Skolem is recognised because it is tagged as a “DimensionValFile,” meaning it stores dimension-specific values.  
+
+ReferenceHeaderFile_Skolem lacks that file-type tag, so the system keeps it out of this category.  
+
+Add the “DimensionValFile” label to ReferenceHeaderFile_Skolem and it would qualify in the same way.  
+
+
+Block 7  
+WarpParams_Skolem_IDX is included because it is declared to be an integer value.  
+
+AtlasXSlice_Skolem_Dim is excluded since it is not marked as an integer; it is seen as descriptive text instead.  
+
+Mark AtlasXSlice_Skolem_Dim as an integer, and it would stand beside WarpParams_Skolem_IDX.  
+
+
+Block 8  
+ReslicedImageFile_Skolem_IDX is accepted thanks to its “Int” label, showing it is a numeric index.  
+
+namePrefix is ignored here because it is a string, not an integer.  
+
+If namePrefix were re-labelled as an integer, it would satisfy the same rule.  
+
+
+Block 9  
+ReferenceImageFile_Skolem is counted because it carries the special type “ReferenceImageFile,” signalling that it holds baseline image data for alignment.  
+
+AnatomyHeaderFile_Skolem does not bear that type, so it remains outside the set.  
+
+Give AnatomyHeaderFile_Skolem the “ReferenceImageFile” designation, and it would be accepted in the same way.  
+
+
+Block 10  
+AtlasZSlice_Skolem_Dim fits because it is identified as a string, indicating textual slice information.  
+
+AnatomyImageFile_Skolem_IDX is not tagged as a string, so it is left out.  
+
+Tag AnatomyImageFile_Skolem_IDX as a string and it would meet the same requirement.  
+
+
+Block 11  
+AnatomyHeaderFile_Skolem is accepted thanks to its explicit type “AnatomyHeaderFile,” marking it as a header that describes anatomical images.  
+
+DimensionVal_Skolem lacks this specialised type and therefore does not join the group.  
+
+Assign the “AnatomyHeaderFile” type to DimensionVal_Skolem and it would qualify just the same.  
+
+
+Block 12  
+AtlasSlice_Skolem is included because it is flagged as an “AtlasSlice,” showing that it represents an individual slice from an atlas.  
+
+WarpParams_Skolem is not recognised here because it carries no such slice designation.  
+
+Label WarpParams_Skolem as an “AtlasSlice,” and it would be treated like AtlasSlice_Skolem.  
+
+
+Block 13  
+(The same reasoning applies as in Block 12 because the information is repeated.)  
+
+
+Block 14  
+ReslicedImageFile_Skolem is accepted because it bears the specialised type “ReslicedImageFile,” indicating an image that has been resampled to match another grid.  
+
+WarpParams_Skolem does not have this image-file type, so it is excluded.  
+
+If WarpParams_Skolem were tagged as a “ReslicedImageFile,” it would be handled the same way.  
+
+
+Block 15  
+AtlasXSlice_Skolem_Dim is allowed because it is marked as a string.  
+
+AnatomyHeaderFile_Skolem_IDX is not, so it fails to qualify.  
+
+Mark AnatomyHeaderFile_Skolem_IDX as a string, and it would be accepted.  
+
+
+Block 16  
+DimensionX_Skolem_Dim is inside the set by virtue of being a string.  
+
+ReslicedImageFile_Skolem_IDX is outside because it is an integer instead.  
+
+If ReslicedImageFile_Skolem_IDX were labelled as a string, it would join DimensionX_Skolem_Dim.  
+
+
+Block 17  
+DimensionVal_Skolem is chosen because it is a “DimensionValFile” and it is linked to DimensionVal_Skolem_Dim through a has-dimension link.  
+
+ReferenceHeaderFile_Skolem lacks both the special file type and that dimension link, so it is left out.  
+
+Give ReferenceHeaderFile_Skolem the same “DimensionValFile” label and connect it to an appropriate dimension, and it would be treated the same.  
+
+
+Block 18  
+AtlasSlice_Skolem qualifies because it is connected to AtlasSlice_Skolem_Dim via a dimension link.  
+
+AveragedAtlasImage_Skolem has no such connection, so it does not qualify.  
+
+Create a similar dimension link for AveragedAtlasImage_Skolem, and it would be viewed like AtlasSlice_Skolem.  
+
+
+Block 19  
+(Identical reasoning to Block 15: AtlasXSlice_Skolem_Dim is a string; AnatomyImageFile_Skolem_IDX is not.)  
+
+
+Block 20  
+DimensionZ_Skolem_Dim is accepted as it is classified as a string.  
+
+WarpParams_Skolem_IDX lacks that string label and is therefore excluded.  
+
+Label WarpParams_Skolem_IDX as a string and it would qualify.  
+
+
+Block 21  
+ReslicedHeaderFile_Skolem_IDX makes the cut because it is an integer.  
+
+AtlasSlice_Skolem_Dim does not, since it is not marked as an integer.  
+
+Mark AtlasSlice_Skolem_Dim as an integer, and it would be let in.  
+
+
+Block 22  
+ReslicedHeaderFile_Skolem_IDX is included owing to its integer status.  
+
+AtlasY_Skolem_Dim is excluded because it is not an integer.  
+
+Give AtlasY_Skolem_Dim an integer label, and it would join the same set.  
+
+
+Block 23  
+DimensionX_Skolem_Dim qualifies as it is a string.  
+
+ReslicedImageFile_Skolem_IDX is not tagged as a string, so it is omitted.  
+
+Tag ReslicedImageFile_Skolem_IDX as a string, and it would be accepted.  
+
+
+Block 24  
+GraphicalAtlasImage_Skolem is accepted because it is tied to GraphicalAtlasImage_Skolem_Dim through a has-dimension link.  
+
+AnatomyHeaderFile_Skolem lacks such a link, so the system does not see it as having that dimension.  
+
+Add an equivalent dimension link to AnatomyHeaderFile_Skolem and it would qualify likewise.  
+
+
+Block 25  
+DimensionZ_Skolem_Dim is in because it is labelled as a string.  
+
+AnatomyHeaderFile_Skolem_IDX, lacking that label, is left out.  
+
+Label AnatomyHeaderFile_Skolem_IDX as a string and it would fit the rule.  
+
+
+Block 26  
+ReferenceHeaderFile_Skolem belongs because it is tagged as a “ReferenceHeaderFile,” indicating a header that provides reference orientation.  
+
+AveragedAtlasHeader_Skolem has no such tag, so it is excluded.  
+
+Attach the “ReferenceHeaderFile” label to AveragedAtlasHeader_Skolem, and it would be treated the same.  
+
+
+Block 27  
+ReslicedHeaderFile_Skolem_IDX is accepted for being an integer.  
+
+AtlasX_Skolem_Dim is not accepted because it is viewed as a string, not an integer.  
+
+If AtlasX_Skolem_Dim were labelled as an integer, it would qualify.  
+
+
+Block 28  
+AveragedAtlasHeader_Skolem fits since it carries the “AveragedAtlasHeader” tag, marking it as the combined header for averaged atlas data.  
+
+AnatomyImageFile_Skolem lacks that tag and so is excluded.  
+
+Tag AnatomyImageFile_Skolem as an “AveragedAtlasHeader,” and it would be included.  
+
+
+Block 29  
+AtlasSlice_Skolem_Dim is in because it is a string.  
+
+AnatomyImageFile_Skolem_IDX is out because it is not labelled as a string.  
+
+Apply the string label to AnatomyImageFile_Skolem_IDX, and it would belong.  
+
+
+Block 30  
+ReslicedHeaderFile_Skolem_IDX counts because it is an integer.  
+
+AtlasZ_Skolem_Dim does not count because it is not an integer.  
+
+Label AtlasZ_Skolem_Dim as an integer, and it would qualify.  
+
+
+Block 31  
+AnatomyImageFile_Skolem_IDX is included since it is marked as an integer.  
+
+AtlasYSlice_Skolem_Dim is excluded for lacking that integer mark.  
+
+Give AtlasYSlice_Skolem_Dim the integer label, and it would fit.  
+
+
+Block 32  
+AtlasX_Skolem_Dim is accepted because it is noted as a string.  
+
+AnatomyImageFile_Skolem_IDX is not accepted since it is not labelled as a string.  
+
+Mark AnatomyImageFile_Skolem_IDX as a string to include it.  
+
+
+Block 33  
+DimensionVal_Skolem_Dim is in by virtue of being a string.  
+
+ReslicedImageFile_Skolem_IDX is out for not being a string.  
+
+Label ReslicedImageFile_Skolem_IDX as a string and it would qualify.  
+
+
+Block 34  
+DimensionX_Skolem_Dim is allowed because it is a string.  
+
+ReslicedHeaderFile_Skolem_IDX is not, lacking that string label.  
+
+Tag ReslicedHeaderFile_Skolem_IDX as a string, and it would be treated the same.  
+
+
+Block 35  
+ReslicedHeaderFile_Skolem is accepted thanks to its “ReslicedHeaderFile” type, marking it as a header produced by reslicing.  
+
+AnatomyHeaderFile_Skolem does not have this resliced-header tag, so it remains outside.  
+
+Give AnatomyHeaderFile_Skolem the “ReslicedHeaderFile” designation, and it would be included.  
+
+
+Block 36  
+AtlasYSlice_Skolem_Dim fits because it is labelled as a string.  
+
+WarpParams_Skolem_IDX does not fit, as it lacks that label.  
+
+Label WarpParams_Skolem_IDX as a string and it would qualify.  
+
+
+Block 37  
+AtlasYSlice_Skolem_Dim is accepted for being a string.  
+
+AnatomyImageFile_Skolem_IDX is not accepted because it is not marked as a string.  
+
+Mark AnatomyImageFile_Skolem_IDX as a string, and it would be included.  
+
+
+Block 38  
+AnatomyHeaderFile_Skolem is included because it bears the “AnatomyHeaderFile” type.  
+
+AveragedAtlasImage_Skolem lacks that type, so it is excluded.  
+
+Add the “AnatomyHeaderFile” tag to AveragedAtlasImage_Skolem and it would qualify.  
+
+
+Block 39  
+ReslicedImageFile_Skolem is accepted because it is linked to its own index value ReslicedImageFile_Skolem_IDX.  
+
+AveragedAtlasHeader_Skolem lacks any index link, so it does not join the group.  
+
+Attach an index value to AveragedAtlasHeader_Skolem, and it would be handled like ReslicedImageFile_Skolem.  
+
+
+Block 40  
+ReslicedImageFile_Skolem_IDX counts because it is an integer.  
+
+DimensionY_Skolem_Dim is left out because it is not labelled as an integer.  
+
+Label DimensionY_Skolem_Dim as an integer and it would qualify.  
+
+
+Block 41  
+GraphicalAtlasImage_Skolem_Dim is accepted for being a string value.  
+
+WarpParams_Skolem_IDX is not, since it is not marked as a string.  
+
+If WarpParams_Skolem_IDX were tagged as a string, it would fit the same rule.  
+
+
+Block 42  
+WarpParams_Skolem is included because it is a “WarpParamsFile” and it carries an index value WarpParams_Skolem_IDX.  
+
+AveragedAtlasImage_Skolem holds neither the special file tag nor an index, so it is excluded.  
+
+Give AveragedAtlasImage_Skolem the “WarpParamsFile” label and attach an index value, and it would qualify just the same.  
+
+
+Block 43  
+AnatomyHeaderFile_Skolem_IDX is in for being an integer.  
+
+AtlasYSlice_Skolem_Dim is out for lacking that integer status.  
+
+Tag AtlasYSlice_Skolem_Dim as an integer, and it would be accepted.  
+
+
+Block 44  
+GraphicalAtlasImage_Skolem is accepted because it is labelled “GraphicalAtlasImage” and is linked to a dimension value.  
+
+ReferenceImageFile_Skolem has neither the special image label nor the dimension link, so it stays out.  
+
+Give ReferenceImageFile_Skolem the same label and link it to a dimension, and it would be treated like GraphicalAtlasImage_Skolem.  
+
+
+Block 45  
+AtlasSlice_Skolem_Dim is accepted since it is recognised as a string.  
+
+WarpParams_Skolem_IDX is not because it is not labelled as a string.  
+
+Label WarpParams_Skolem_IDX as a string, and it would fit.  
+
+
+Block 46  
+AtlasYSlice_Skolem_Dim is in due to its string label.  
+
+WarpParams_Skolem_IDX is out for lacking that label.  
+
+Add the string label to WarpParams_Skolem_IDX and it would qualify.  
+
+
+Block 47  
+AnatomyHeaderFile_Skolem_IDX qualifies because it is an integer.  
+
+GraphicalAtlasImage_Skolem_Dim does not qualify since it is not labelled as an integer.  
+
+Label GraphicalAtlasImage_Skolem_Dim as an integer and it would be accepted.  
+
+
+Block 48  
+DimensionVal_Skolem makes the cut because it is linked to DimensionVal_Skolem_Dim through a dimension connection.  
+
+ReslicedImageFile_Skolem lacks such a link, so it does not qualify.  
+
+Provide ReslicedImageFile_Skolem with a similar dimension link and it would be treated the same.  
+
+
+Block 49  
+GraphicalAtlasImage_Skolem is accepted because it carries the “GraphicalAtlasImage” type.  
+
+AnatomyHeaderFile_Skolem does not have that type, so it is excluded.  
+
+Assign the “GraphicalAtlasImage” label to AnatomyHeaderFile_Skolem, and it would qualify.  
+
+
+Block 50  
+DimensionVal_Skolem is included thanks to its “DimensionValFile” tag.  
+
+WarpParams_Skolem lacks that designation, so it is left out.  
+
+Apply the “DimensionValFile” tag to WarpParams_Skolem and it would be accepted.  
+
+
+Block 51  
+namePrefix is accepted as it is tagged as a string.  
+
+AnatomyHeaderFile_Skolem_IDX is not accepted because it is not a string.  
+
+Label AnatomyHeaderFile_Skolem_IDX as a string, and it would join namePrefix.  
+
+
+Block 52  
+DimensionX_Skolem_Dim is accepted for being a string.  
+
+WarpParams_Skolem_IDX is rejected for lacking that label.  
+
+Mark WarpParams_Skolem_IDX as a string, and it would qualify.  
+
+
+Block 53  
+namePrefix is included because it is recognised as a string.  
+
+ReslicedImageFile_Skolem_IDX is not, since it is an integer.  
+
+If ReslicedImageFile_Skolem_IDX were labelled as a string, it would be treated like namePrefix.  
+
+
+Block 54  
+AtlasYSlice_Skolem_Dim qualifies thanks to its string label.  
+
+ReslicedHeaderFile_Skolem_IDX does not, because it is not marked as a string.  
+
+Add the string label to ReslicedHeaderFile_Skolem_IDX and it would belong.  
+
+
+Block 55  
+AtlasZ_Skolem_Dim is accepted because it is a string.  
+
+WarpParams_Skolem_IDX is excluded for not being a string.  
+
+Label WarpParams_Skolem_IDX as a string, and it would qualify.  
+
+
+Block 56  
+GraphicalAtlasImage_Skolem is included due to its “GraphicalAtlasImage” type.  
+
+ReslicedImageFile_Skolem lacks that specialised type, so it is not included.  
+
+Give ReslicedImageFile_Skolem the “GraphicalAtlasImage” label and it would be treated the same way.
